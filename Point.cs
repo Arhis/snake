@@ -14,10 +14,17 @@ namespace snake
 	/// Description of Class1.
 	/// </summary>
 	class Point
-	{
+	{	
 		public int x;
 		public int y;
 		public char sym;
+		
+		public Point (int _x, int _y, char _sym)
+		{
+			y=_y;
+			x=_x;
+			sym=_sym;
+		}
 		
 		public void Draw () {
 			Console.SetCursorPosition(x,y);
