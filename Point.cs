@@ -7,6 +7,11 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace snake
 {
@@ -49,11 +54,11 @@ namespace snake
 			}
 			else if (direction ==Direction.UP)
 			{
-				x=x+offset;
+				y=y-offset;
 			}
 			else if (direction==Direction.DOWN)
 			{
-				x=x-offset;
+				y=y+offset;
 			}
 		}
 		
