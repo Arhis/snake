@@ -7,7 +7,6 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;	
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,17 +17,37 @@ namespace snake
 	/// <summary>
 	/// Description of Snake.
 	/// </summary>
-	class Snake :Figure
+	class Snake :Figure	 
 	{
-		public Snake(Point tail, int lenght, Direction direction) 
-		{
+		Direction direction;
+		public Snake(Point tail, int length, Direction _direction) 
+		{   
+			direction= _direction;
 			pList = new List<Point>();
-			for (int i=0; i<lenght; i++)
+			for (int i=0; i<length; i++)
 			{
 				Point p=new Point(tail);
 				p.Move(i, direction);
 				pList.Add(p);
 			}
+		}
+		internal void Move()
+		{
+			Point tail = pList.First();
+			pList.Remove(tail);
+			Point head = GetNextPoint();
+			pList.Add(head);
+			
+			tail.Clear();
+			head.Draw();	
+		}
+		
+		public Point GetNextPoint()
+		{
+			Point head=pList.Last();
+			Point nextPoint= new Point(head);
+			nextPoint.Move(1, direction);
+			return nextPoint;	
 		}
 	}
 }
