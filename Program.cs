@@ -17,16 +17,24 @@ namespace snake
 	class Program
 	{
 		public static void Main(string[] args)
-		{		
-			Point p1=new Point(1, 3, '*');			
-				p1.Draw();
+		{	
+			//Задание экранному пространству определенного размера
+			Console.SetBufferSize(80,25);
 			
-			Point p2=new Point(4, 5, '#');			
-				p2.Draw();
+			// Отрисовка линий
+				HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');				
+				HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
+				VerticalLine leftLine=new VerticalLine(0, 24, 0, '+');
+				VerticalLine rightLine=new VerticalLine(0, 24, 78, '+');
+			 	upLine.Drow();
+			 	downLine.Drow();
+				leftLine.Drow();
+				rightLine.Drow();
 				
-				HorizontalLine line = new HorizontalLine(5, 10, 8, '+');
-				line.Drow();
-			 
+			//Отрисовка точек
+			Point p= new Point(4, 5, '*');
+			p.Draw();
+				
 			Console.ReadLine();						
 		}	
 	}

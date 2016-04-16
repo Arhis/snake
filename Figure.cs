@@ -2,10 +2,11 @@
  * Created by SharpDevelop.
  * User: Виктор
  * Date: 16.04.2016
- * Time: 14:10
+ * Time: 19:53
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
+using System;	
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,20 +16,19 @@ using System.Threading.Tasks;
 namespace snake
 {
 	/// <summary>
-	/// Description of HorizontalLine.
+	/// Description of Figure.
 	/// </summary>
-	///
-	class HorizontalLine : Figure
+	class Figure
 	{
+		protected List <Point> pList;
 		
-		public HorizontalLine(int xLeft, int xRight, int y, char sym)
+		public void Drow ()
 		{
-			pList = new List<Point>();
-			for(int x = xLeft; x<xRight; x++)
+			foreach (Point p in pList) 
 			{
-				Point p = new Point(x, y, sym);	
-				pList.Add(p);
+				p.Draw();
 			}
-		}	
+				
+		}
 	}
 }
