@@ -31,7 +31,7 @@ namespace snake
 				pList.Add(p);
 			}
 		}
-		internal void Move()
+		public void Move()
 		{
 			Point tail = pList.First();
 			pList.Remove(tail);
@@ -61,7 +61,7 @@ namespace snake
 			direction = Direction.UP;
 		}
 		
-		internal bool Eat(Point food)
+		public bool Eat(Point food)
 		{
 			Point head= GetNextPoint();
 			if (head.IsHit(food))
